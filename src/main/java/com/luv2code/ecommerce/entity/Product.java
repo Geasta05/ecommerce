@@ -2,6 +2,10 @@ package com.luv2code.ecommerce.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table(name="product")
@@ -18,17 +22,19 @@ public class Product {
     private String name;
     @Column(name = "description")
     private String description;
-    @Column(name = "unit-price")
+    @Column(name = "unit_price")
     private BigDecimal unitPrice;
-    @Column(name = "image-url")
+    @Column(name = "image_url")
     private String imageUrl;
     @Column(name = "active")
     private boolean active;
-    @Column(name = "units-in-stock")
+    @Column(name = "units_in_stock")
     private int unitsInStock;
-    @Column(name = "date-created")
+    @Column(name = "date_created")
+    @CreationTimestamp
+    @UpdateTimestamp
     private Date dateCreated;
-    @Column(name = "last-updated")
+    @Column(name = "last_updated")
     private Date lastUpdated;
 
 
