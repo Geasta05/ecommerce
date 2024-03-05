@@ -35,9 +35,9 @@ public class Product {
     private int unitsInStock;
     @Column(name = "date_created")
     @CreationTimestamp
-    @UpdateTimestamp
     private Date dateCreated;
     @Column(name = "last_updated")
+    @UpdateTimestamp
     private Date lastUpdated;
 
 
